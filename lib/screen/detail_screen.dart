@@ -3,12 +3,17 @@ import 'package:ucp_pam/screen/form_screen.dart';
 import 'package:ucp_pam/widgets_detail/footer_detail.dart';
 
 class DetailScreen extends StatelessWidget {
-  const DetailScreen(
-      {super.key,
-      required this.makanan,
-      required this.minuman,
-      required this.dessert});
+  const DetailScreen({
+    super.key,
+    required this.makanan,
+    required this.minuman,
+    required this.dessert,
+    required this.nama,
+    required this.notelp,
+  });
 
+  final String nama;
+  final String notelp;
   final String makanan;
   final String minuman;
   final String dessert;
@@ -26,6 +31,12 @@ class DetailScreen extends StatelessWidget {
             Column(
               children: [
                 Text(
+                  "Nama: $nama",
+                ),
+                Text(
+                  "No. Telp: $notelp",
+                ),
+                Text(
                   "Makanan : $makanan",
                 ),
                 Text(
@@ -37,7 +48,8 @@ class DetailScreen extends StatelessWidget {
               ],
             ),
             FooterDetail(
-              onPressedSubmit: () { {
+              onPressedSubmit: () {
+                {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(

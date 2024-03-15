@@ -69,7 +69,8 @@ class _MakananScreenState extends State<MakananScreen> {
                     context,
                     MaterialPageRoute(
                       builder: (context) => DetailScreen(
-                        
+                        nama: widget.nama,
+                        notelp: widget.notelp,
                         makanan: makanan.text,
                         minuman: minuman.text,
                         dessert: dessert.text,

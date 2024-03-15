@@ -56,24 +56,6 @@ class _FormWidgetState extends State<FormMakanan> {
             ),
           ),
           SizedBox(height: 25),
-
-          // TextFormField(
-          //   obscureText: true,
-          //   controller: widget.etNotelp,
-          //   decoration: InputDecoration(
-          //     labelText: "Password",
-          //     hintText: "Masukkan Email",
-          //     prefixIcon: Icon(Icons.lock),
-          //   ),
-          //   validator: (value) {
-          //     if (value!.isEmpty) {
-          //       return "Masukkan password dengan benar";
-          //     } else if (value.length <= 6) {
-          //       "Masukkan minimal 6 characters";
-          //     }
-          //     return null;
-          //   },
-          // ),
         ],
       ),
     );
