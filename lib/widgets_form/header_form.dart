@@ -10,7 +10,7 @@ class HeaderForm extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(top: 20),
           child: Text(
-            "Aldi Resto",
+            "Aldayanday Resto",
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
         ),

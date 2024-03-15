@@ -4,13 +4,13 @@ import 'package:ucp_pam/widgets_detail/footer_detail.dart';
 
 class DetailScreen extends StatelessWidget {
   const DetailScreen({
-    super.key,
+    Key? key,
     required this.makanan,
     required this.minuman,
     required this.dessert,
     required this.nama,
     required this.notelp,
-  });
+  }) : super(key: key);
 
   final String nama;
   final String notelp;
@@ -24,39 +24,55 @@ class DetailScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text("Detail Form"),
       ),
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Column(
-              children: [
-                Text(
-                  "Nama: $nama",
-                ),
-                Text(
-                  "No. Telp: $notelp",
-                ),
-                Text(
-                  "Makanan : $makanan",
-                ),
-                Text(
-                  "Minuman : $minuman",
-                ),
-                Text(
-                  "Dessert : $dessert",
-                ),
-              ],
+            SizedBox(height: 20),
+            Text(
+              "Detail Pemesanan",
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
+            SizedBox(height: 20),
+            Text(
+              "Nama: $nama",
+              style: TextStyle(fontSize: 18),
+            ),
+            SizedBox(height: 10),
+            Text(
+              "No. Telp: $notelp",
+              style: TextStyle(fontSize: 18),
+            ),
+            SizedBox(height: 20),
+            Text(
+              "Pesanan",
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 20),
+            Text(
+              "Makanan: $makanan",
+              style: TextStyle(fontSize: 18),
+            ),
+            SizedBox(height: 10),
+            Text(
+              "Minuman: $minuman",
+              style: TextStyle(fontSize: 18),
+            ),
+            SizedBox(height: 10),
+            Text(
+              "Dessert: $dessert",
+              style: TextStyle(fontSize: 18),
+            ),
+            Spacer(),
             FooterDetail(
               onPressedSubmit: () {
-                {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => DataForm(),
-                    ),
-                  );
-                }
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DataForm(),
+                  ),
+                );
               },
             ),
           ],
