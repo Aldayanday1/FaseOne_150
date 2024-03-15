@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ucp_pam/screen/form_screen.dart';
+import 'package:ucp_pam/widgets_detail/footer_detail.dart';
 
 class DetailScreen extends StatelessWidget {
   const DetailScreen(
@@ -15,20 +17,35 @@ class DetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home Screen"),
+        title: Text("Detail Form"),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              "Hello, $makanan",
+            Column(
+              children: [
+                Text(
+                  "Makanan : $makanan",
+                ),
+                Text(
+                  "Minuman : $minuman",
+                ),
+                Text(
+                  "Dessert : $dessert",
+                ),
+              ],
             ),
-            Text(
-              "Hello, $minuman",
-            ),
-            Text(
-              "Hello, $dessert",
+            FooterDetail(
+              onPressedSubmit: () { {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DataForm(),
+                    ),
+                  );
+                }
+              },
             ),
           ],
         ),

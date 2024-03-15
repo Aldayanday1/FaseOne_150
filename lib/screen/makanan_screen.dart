@@ -65,7 +65,7 @@ class _MakananScreenState extends State<MakananScreen> {
             FooterMakanan(
               onPressedSubmit: () {
                 if (formKey.currentState!.validate()) {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                       builder: (context) => DetailScreen(

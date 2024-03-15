@@ -32,7 +32,7 @@ class DataForm extends StatelessWidget {
                 FooterWidget(
                   onPressedSubmit: () {
                     if (formKey.currentState!.validate()) {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
                           builder: (context) => MakananScreen(
