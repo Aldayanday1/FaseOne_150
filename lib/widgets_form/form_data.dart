@@ -52,6 +52,12 @@ class _FormWidgetState extends State<FormWidget> {
               hintText: "Masukkan No Telepon",
               prefixIcon: Icon(Icons.phone),
             ),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Nomor telepon harus diisi';
+              }
+              return null;
+            },
           ),
           SizedBox(height: 25),
           TextFormField(
@@ -93,39 +99,8 @@ class _FormWidgetState extends State<FormWidget> {
               ),
             ],
           )
-          // TextFormField(
-          //   obscureText: true,
-          //   controller: widget.etNotelp,
-          //   decoration: InputDecoration(
-          //     labelText: "Password",
-          //     hintText: "Masukkan Email",
-          //     prefixIcon: Icon(Icons.lock),
-          //   ),
-          //   validator: (value) {
-          //     if (value!.isEmpty) {
-          //       return "Masukkan password dengan benar";
-          //     } else if (value.length <= 6) {
-          //       "Masukkan minimal 6 characters";
-          //     }
-          //     return null;
-          //   },
-          // ),
         ],
       ),
     );
   }
 }
-
-
-            // value = parameter dari objek validator
-            // validator: (value) {
-            //   // prefiks = penanda/simbol di awal kalimat
-            //   // prefiks r (rawstring) sebagai pendanda bahwa karakter tersebut literal (kalimat tunggal) dan mengabaikan karakter escape (yang ada notasi spt '\n' nya)
-            //   bool valid = RegExp(r"@").hasMatch(value!);
-            //   if (value.isEmpty) {
-            //     return "Masukkan email dengan benar";
-            //   } else if (!valid) {
-            //     return "Harus ada @";
-            //   }
-            //   return null;
-            // },
