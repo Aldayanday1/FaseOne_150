@@ -14,9 +14,11 @@ class FooterMakanan extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.only(top: 35, bottom: 25),
-          child: ElevatedButton(
-            onPressed: onPressedSubmit,
-            child: Text("Submit"),
+          child: Center(
+            child: ElevatedButton(
+              onPressed: onPressedSubmit,
+              child: Text("Submit"),
+            ),
           ),
         ),
       ],
