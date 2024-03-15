@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:ucp_pam/screen/detail_screen.dart';
+import 'package:ucp_pam/widgets_makanan/footer_makanan.dart';
 import 'package:ucp_pam/widgets_makanan/form_makanan.dart';
-import 'package:ucp_pam/widgets_makanan/header_makanan.dart';
 
 class MakananScreen extends StatefulWidget {
   MakananScreen({super.key, required this.nama, required this.notelp});
-
-  var makanan = TextEditingController();
-  var minuman = TextEditingController();
-  var dessert = TextEditingController();
 
   final String nama;
   final String notelp;
@@ -26,22 +24,35 @@ class _MakananScreenState extends State<MakananScreen> {
     var formKey = GlobalKey<FormState>();
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Data Makanan"),
+        centerTitle: true,
+      ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            HeaderMakanan(),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 50),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     "Nama : ${widget.nama}",
                   ),
+                  SizedBox(
+                    height: 10,
+                  ),
                   Text(
                     "Telp : ${widget.notelp}",
                   ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                children: [
                   FormMakanan(
                     formKey: formKey,
                     etMakanan: makanan,
@@ -50,6 +61,23 @@ class _MakananScreenState extends State<MakananScreen> {
                   )
                 ],
               ),
+            ),
+            FooterMakanan(
+              onPressedSubmit: () {
+                if (formKey.currentState!.validate()) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DetailScreen(
+                        
+                        makanan: makanan.text,
+                        minuman: minuman.text,
+                        dessert: dessert.text,
+                      ),
+                    ),
+                  );
+                }
+              },
             ),
           ],
         ),

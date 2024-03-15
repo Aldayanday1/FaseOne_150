@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class FooterWidget extends StatelessWidget {
-  const FooterWidget({
+class FooterMakanan extends StatelessWidget {
+  const FooterMakanan({
     super.key,
     required this.onPressedSubmit,
   });
