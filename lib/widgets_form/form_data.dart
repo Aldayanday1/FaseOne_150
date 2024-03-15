@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -64,7 +65,7 @@ class _FormWidgetState extends State<FormWidget> {
             ),
           ),
           SizedBox(height: 25),
-          Row(
+          Column(
             children: <Widget>[
               ListTile(
                 title: const Text('Perempuan'),

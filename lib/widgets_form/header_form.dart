@@ -24,7 +24,7 @@ class HeaderForm extends StatelessWidget {
           padding: const EdgeInsets.only(top: 20),
           child: ClipOval(
             child: Image.network(
-              'https://img.freepik.com/free-vector/leaf-maple-icon-logo-design_474888-2154.jpg?size=338&ext=jpg&ga=GA1.1.1269040533.1710374400&semt=sph',
+              'https://media.designrush.com/articles/463030/conversions/Pepsi_New-details.jpg',
               fit: BoxFit.cover,
               width: 100,
               height: 100,

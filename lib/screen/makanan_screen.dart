@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ucp_pam/widgets_makanan/form_makanan.dart';
+import 'package:ucp_pam/widgets_makanan/header_makanan.dart';
 
 class MakananScreen extends StatefulWidget {
   MakananScreen({super.key, required this.nama, required this.notelp});
@@ -17,15 +19,19 @@ class MakananScreen extends StatefulWidget {
 class _MakananScreenState extends State<MakananScreen> {
   @override
   Widget build(BuildContext context) {
+    var makanan = TextEditingController();
+    var minuman = TextEditingController();
+    var dessert = TextEditingController();
+
+    var formKey = GlobalKey<FormState>();
+
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Data Makanan"),
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            HeaderMakanan(),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
@@ -36,11 +42,12 @@ class _MakananScreenState extends State<MakananScreen> {
                   Text(
                     "Telp : ${widget.notelp}",
                   ),
-                  // FormMakanan(
-                  //     formKey: formKey,
-                  //     etMakanan: etMakanan,
-                  //     etMinuman: etMinuman,
-                  //     etDessert: etDessert)
+                  FormMakanan(
+                    formKey: formKey,
+                    etMakanan: makanan,
+                    etMinuman: minuman,
+                    etDessert: dessert,
+                  )
                 ],
               ),
             ),
